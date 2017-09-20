@@ -1,0 +1,74 @@
+<header>
+  <h1>TODO</h1>(nag stopping technology)
+ 
+</header>
+<main>
+  <div class="listBox" id="notDone">
+    <div class="boxHead" id="ndHead">
+      <h2>Not Done</h2>
+    </div>
+    <div class="boxBody">
+      <ul>
+        {{#each list}}
+          {{#unless this.isDone}}
+            <li> 
+              <span>{{this.thingsTODO}}</span> 
+              {{> lists/complete-task}} 
+            </li>
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  
+  <div class="listBox" id="done">
+    <div class="boxHead" id="dHead">
+      <h2>Done</h2>
+    </div>
+    <div class="boxBody">
+      <ul>
+        {{#each list}}
+          {{#if this.isDone}}
+            <li>
+              {{this.thingsTODO}}
+              {{> lists/delete-task}}
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+  <div class="listAdd" id="addForm">
+    <div class="formHead"><h2>Add a Task</h2>
+    <form class="create-update-form" action="/" method="POST">
+
+      <div class="form-group">
+        <label for="task">Task:</label>
+        <input type="text" id="task" name="thingsTODO">
+        <button type="submit">Add Task</button>
+      </div>
+    </form>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <div id="text">
+      <p>
+        Add a task. When that task is completed click on the complete button under it.
+      </p>
+      <p>  
+        Once your spouse has noticed you completed the task delete it.
+      </p> 
+    </div>
+  </div>
+</main>
+<footer>
+  <h5>©Copyright Andrew Dicer - 2017</h5>
+</footer>
+
+
+
+
+
+
